@@ -5,6 +5,7 @@
 
 {{-- <h3>Start a Cause</h3> --}}
 
+
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">
@@ -17,9 +18,15 @@
                             <div class="text-danger">{{$errors->first('title')}}</div>
                             </div>
 
+                            {{-- <div class="form-group">
+                                {{Form::label('description', 'description')}}
+                                {{Form::text('description', '', ['class'=>'form-control','placeholder'=>'description'])}}
+                            <div class="text-danger">{{$errors->first('title')}}</div>
+                            </div> --}}
+
                             <div class="form-group">
-                                    {{Form::label('description', 'Body')}}
-                                    {{Form::textarea('description', '', ['id'=>'article-ckeditor', 'class'=>'form-control','placeholder'=>'Body'])}}
+                                    {{Form::label('description', 'description')}}
+                                    {{Form::textarea('description', '', ['class'=>'form-control','placeholder'=>'Body'])}}
                                 <div class="text-danger">{{$errors->first('description')}}</div>
                              </div>
 

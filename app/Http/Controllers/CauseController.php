@@ -59,9 +59,11 @@ class CauseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
-        $causes = Cause::orderBy('title', 'desc')->get();
+        $causes = Cause::orderBy('created_at', 'desc')->get();
         $causes = CauseResource::collection($causes);
         Artisan::call("db:seed --class=Status");
         return view ('causes.index')->with('causes', $causes);
@@ -141,11 +143,11 @@ class CauseController extends Controller
             $cause->cause_image = $fileNameToStore;
             $cause->save();
 
-            $users = User::all();
+            // $users = User::all();
 
-            foreach($users as $user) {
-                $user->notify(new NewPost($cause));
-            }
+            // foreach($users as $user) {
+            //     $user->notify(new NewPost($cause));
+            // }
 
             return redirect('/causes')->with('success', 'Cause Created');
 

@@ -58,8 +58,9 @@ class Cause extends Model
     public function isAFollower()
     {
         $users_id = $this->users->pluck("id")->toArray();
-        $auth_id = Auth::user()->id;
-        if(in_array($auth_id, $users_id)){
+        // $auth_id = Auth::user()->id;
+        $id= Auth::id();
+        if(in_array($id, $users_id)){
             return true;
         }
         return false;

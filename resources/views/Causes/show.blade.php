@@ -6,7 +6,7 @@
 
 {{-- <a href="/causes/{{$cause->id}}/edit" class="btn btn btn-warning">Edit</a> --}}
 
-<a href="/causes" class="btn btn-info mb-5 ml-3">Go back</a>
+<a href="/causes" class="btn btn-sm btn-info ml-3">Go back</a>
 
 <div class="row justify-content-center">
     <div class="col-md-8">
@@ -55,12 +55,12 @@
 
                 @if(!Auth::guest())
                 @if(Auth::user()->id == $cause->user_id)
-            <a href="/causes/{{$cause->id}}/edit" class="btn btn btn-warning mt-5 text-center">Edit</a>
+            <a href="/causes/{{$cause->id}}/edit" class="btn btn-sm btn-warning mt-5 text-center">Edit</a>
 
             {!!Form::open(['action' => ['CauseController@destroy', $cause->id], 'method' => 'POST', 'class' => "float-right"])!!}
 
                 {{Form::hidden('_method', 'DELETE')}}
-                {{Form::submit('Delete', ['class'=> 'btn btn-danger mt-5'])}}
+                {{Form::submit('Delete', ['class'=> 'btn btn-sm btn-danger mt-5'])}}
 
     </div>
 </div>

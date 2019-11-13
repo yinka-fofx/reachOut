@@ -1,6 +1,6 @@
 <template>
     <div class="card-text">
-        <a @click="unfollow()" class="btn btn-sm btn-danger" v-if="causeData.is_follower">Un Follow
+        <a @click="unfollow()" class="btn btn-sm btn-danger" v-if="causeData.is_follower">UnFollow
             <span>{{ causeData.user_count }}</span>
         </a>
         <a @click="follow()" class="btn btn-sm btn-success" v-else> Follow

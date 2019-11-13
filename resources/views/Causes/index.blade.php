@@ -20,15 +20,12 @@
     </div> --}}
 
 
-
-
-
         @if(count($causes) > 0)
         @foreach($causes as $cause)
     <div class="row justify-content-center">
             <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header text-center">Causes</div>
+                    <div class="card mt-4">
+                        <div class="card-header text-center my-cause">Causes</div>
 
                     <div class="card-body text-center">
                         <div class="row">
@@ -53,9 +50,20 @@
                                             <small>Written on {{$cause->created_at}} by {{$cause->creator->name}}</small>
                                     </div>
 
-                                    <like-component :cause="{{ json_encode($cause) }}"></like-component>
+                                    <div class="row mt-3">
+                                        <div class="col-md-6">
+                                            <like-component :cause="{{ json_encode($cause) }}"></like-component>
+                                        </div>
 
-                                    <follow-component :cause="{{ json_encode($cause) }}"></follow-component>
+                                        <div class="col-md-6">
+                                            <follow-component :cause="{{ json_encode($cause) }}"></follow-component>
+
+                                        </div>
+                                    </div>
+
+
+
+
 
                             </div>
                         </div>
@@ -71,6 +79,11 @@
     </div>
     @endforeach
     @else
-        <p>No Post found</p>
+        <div class="card">
+            <div class="card-text">
+            <p>No Post found</p>
+            </div>
+        </div>
+
     @endif
     @endsection

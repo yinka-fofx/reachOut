@@ -16,6 +16,8 @@
 // });
 
 Route::get('/ ', 'PagesController@index');
+Route::get('/ ', 'PagesController@index2');
+
 
 
 

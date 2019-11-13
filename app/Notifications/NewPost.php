@@ -47,7 +47,7 @@ class NewPost extends Notification
                     ->action('View post', url(route("causes.show", ["id" => $this->cause->id])))
                     ->line('Thank you for using our application!');
     }
-
+  
     /**
      * Get the array representation of the notification.
      *

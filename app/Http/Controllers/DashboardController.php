@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Cause;
 
 class DashboardController extends Controller
 {
@@ -15,7 +16,7 @@ class DashboardController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        
+
     }
 
     /**
@@ -26,7 +27,11 @@ class DashboardController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
+
         $user = User::find($user_id);
-        return view('dashboard')->with('causes', $user->causes);
+
+        $causes = Cause::where('user_id', '=', $user_id)->get();
+
+        return view('dashboard')->with('causes', $causes);
     }
 }
