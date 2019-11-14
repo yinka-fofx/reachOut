@@ -18,5 +18,7 @@ class PagesController extends Controller
 
         return view ('pages.index')->with('causes', $causes);
     }
+
+
 }
 

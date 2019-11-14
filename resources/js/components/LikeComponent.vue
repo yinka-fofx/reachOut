@@ -1,9 +1,15 @@
 <template>
     <div class="panel-footer">
 
-        <a @click="unlike()" class="btn btn-sm btn-danger" v-if="causeData.is_liked">Unlike</a>
+        <a @click="unlike()" class="btn btn-sm btn-danger" v-if="causeData.is_liked">Unlike
+            <span>{{ causeData.user_count }}</span>
+        </a>
 
-        <a @click="like()" class="btn btn-sm btn-success" v-else>Like</a>
+
+        <a @click="like()" class="btn btn-sm btn-success" v-else>Like
+            <span>{{ causeData.user_count }}</span>
+
+        </a>
 
     </div>
 </template>

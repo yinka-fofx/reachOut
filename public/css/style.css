@@ -71,11 +71,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position: relative;
+
     height: 100vh;
     margin-top: -20px;
     padding-top:0;
-    z-index: -2;
+  
 }
 
 .opacity {
@@ -297,7 +297,7 @@ textarea {
     border: 0;
     width: 100%;
     font-size: 1rem;
-    background-color: #2d2d2d;
+    background-color: white;
     color: white;
     border-radius: 4px;
 }
@@ -324,11 +324,11 @@ textarea {
 }
 
 .submit-btn {
-    float: right;
+    /* float: right; */
     padding: 7px 35px;
-    border-radius: 60px;
-    display: inline-block;
-    background-color: #4b8cfb;
+
+    /* display: inline-block; */
+    /* background-color: #4b8cfb; */
     color: white;
     font-size: 18px;
     cursor: pointer;
@@ -366,4 +366,9 @@ input[type=checkbox]:checked + label {
     background-color: green;
     color:white;
 
+}
+
+.my-uploads {
+    background-color: none;
+    border:none
 }

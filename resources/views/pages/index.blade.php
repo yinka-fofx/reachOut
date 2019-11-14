@@ -60,7 +60,7 @@
                                 <img class="card-img-top" style="width:100%" src="/storage/cause_images/{{$cause->cause_image}}">
 
                                 <div class="card-block">
-                                <h3>Title:<a style="text-light" href="/login">{{$cause->title}}</a></h3>
+                                <h3>Title:<a style="color:black" href="/causes">{{$cause->title}}</a></h3>
                                 {{-- <h4 class="card-title">Posted by:{{$cause->title}}</h4> --}}
                                     <div class="meta"></div>
                                     <hr>
@@ -108,24 +108,26 @@
                           <div class="col-md-8 ml-auto mr-auto">
                             <h2 class="text-center title join mt-4">Work with us</h2>
                             <h4 class="text-center description">Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.</h4>
-                            <form class="contact-form py-5">
+
+
+                            <form class="contact-form py-5" method="POST" action="/contact">
                               <div class="row">
                                 <div class="col-md-6">
                                   <div class="form-group">
                                     <h4><label class="bmd-label-floating">Your Name</label></h4>
-                                    <input type="email" class="form-control">
+                                    <input type="name" name="name" class="form-control">
                                   </div>
                                 </div>
                                 <div class="col-md-6">
                                   <div class="form-group">
                                     <h4><label class="bmd-label-floating">Your Email</label></h4>
-                                    <input type="email" class="form-control">
+                                    <input type="email" name="email" class="form-control">
                                   </div>
                                 </div>
                               </div>
                               <div class="form-group">
                                <h4><label for="exampleMessage" class="bmd-label-floating">Your Message</label></h4>
-                                <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
+                                <textarea type="text" class="form-control" name="YourMessage" rows="4" id="exampleMessage"></textarea>
                               </div>
                               <div class="row">
                                 <div class="col-md-4 ml-auto mr-auto text-center">
@@ -134,7 +136,10 @@
                                   </button>
                                 </div>
                               </div>
+                              @csrf
                             </form>
+
+
                           </div>
                         </div>
                       </div>
@@ -200,5 +205,7 @@
 
 
 
-
+@include('layouts.footer')
 @endsection
+
+

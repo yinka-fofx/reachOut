@@ -31,7 +31,7 @@
 
                             <div class="form-group">
                                     {{Form::label('Due_Date', 'Due_Date')}}
-                                    {{Form::date('Due_Date', '', ['class'=>'form-control','placeholder'=>'Due_Date'])}}
+                                    {{Form::date('Due_Date',$cause->Due_Date,['class'=>'form-control','placeholder'=>'Due_Date'])}}
                                     <div class="text-danger">{{$errors->first('Due_Date')}}</div>
 
 

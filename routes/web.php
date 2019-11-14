@@ -18,6 +18,9 @@
 Route::get('/ ', 'PagesController@index');
 Route::get('/ ', 'PagesController@index2');
 
+Route::get('/','ContactFormController@create');
+Route::post('/contact','ContactFormController@store');
+
 
 
 
@@ -56,6 +59,9 @@ Route::post('/causes/{id}/unfollow', [
 Route::get('/explore', function () {
     return view('pages.explore');
 });
+
+
+
 
 Auth::routes();
 

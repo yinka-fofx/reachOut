@@ -43,7 +43,7 @@
                                             Due Date: {{$cause->Due_Date}}
                                      </div>
                                      <div class="card-text">
-                                            Status: {{$cause->Active == 1 ? "Completed" : "Active"}}
+                                            Status: {{$cause->Active == 1 ? "Active" : "Completed"}}
                                      </div>
 
                                      <div class="card-text">
@@ -51,11 +51,11 @@
                                     </div>
 
                                     <div class="row mt-3">
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 mt-2">
                                             <like-component :cause="{{ json_encode($cause) }}"></like-component>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 mb-5">
                                             <follow-component :cause="{{ json_encode($cause) }}"></follow-component>
 
                                         </div>

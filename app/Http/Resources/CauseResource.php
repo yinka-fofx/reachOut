@@ -20,7 +20,7 @@ class CauseResource extends JsonResource
             "description" => $this->title,
             "location" => $this->location,
             "due_date" => $this->Due_Date,
-            "status" => $this->Active == 1 ? "Completed" : "Active",
+            "status" => $this->Active == 1 ? "Active" : "Completed",
             "cause_image" => $this->cause_image,
             "documentation_image" => $this->documentation_image,
             "Created_at" => $this->created_at,

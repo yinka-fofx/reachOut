@@ -54,7 +54,7 @@
                                     {{Form::text('location', '', ['class'=>'form-control','placeholder'=>'location'])}}
                                 <div class="text-danger">{{$errors->first('title')}}</div>
                              </div> --}}
-                             {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
+                             {{Form::submit('Submit', ['class'=>' btn btn-sm btn-outline-primary my-btn'])}}
                                {!! Form::close() !!}
                     </div>
             </div>

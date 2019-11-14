@@ -18,7 +18,10 @@ class CauseController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth',['except' => ['index', 'show']]);
+        $this->middleware('auth');
+        // $this->middleware('auth',['except' => ['index', 'show']]);
+
+
 
     }
 
@@ -164,6 +167,7 @@ class CauseController extends Controller
      */
     public function show(cause $cause)
     {
+
         return view('causes.show', compact('cause'));
     }
 
@@ -179,6 +183,7 @@ class CauseController extends Controller
             // $cause = Cause::find($cause);
 
             //check for correct user
+
             if(auth()->user()->id !==$cause->user_id){
             return redirect ('/causes')->with('error', 'Unauthorized Page');
             }
