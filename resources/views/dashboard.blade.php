@@ -2,6 +2,13 @@
 
 @section('content')
 
+{{-- @if(session('success'))
+
+<div class="alert alert-success my-3">
+    {{session('success')}}
+</div>
+@endif --}}
+
 
     <div class="wrapper">
         <div class="opacity">
@@ -48,7 +55,7 @@
                                             @foreach ($causes as $cause)
 
                                                 <tr>
-                                                    <td class="text-white">{{$cause->title}}</td>
+                                                <td class="text-white"><a style="color:white" href="/causes/{{$cause->id}}">{{$cause->title}}</a></td>
                                                     {{-- <td><a href="/causes/{{$cause->id}}/edit" class="btn btn-sm btn-warning mt-5 text-center">Edit</a></td> --}}
                                                     <td><a href="/causes/{{$cause->id}}/edit" class="btn btn-sm btn-outline-danger float-right ml-5">Edit</a></td>
                                                     <td scope="col">
@@ -65,6 +72,8 @@
 
                                     </tbody>
                                 </table>
+
+
             </div>
 
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -98,9 +107,9 @@
 
                                                     {{-- <td scope="col"><a href="/causes/{{$cause->id}}/edit" class="btn btn-sm btn-outline-danger float-right ml-5">Edit</a></td> --}}
                                                     <td scope="col">
-                                                                    {{-- {!!Form::open(['action' => ['CauseController@destroy', $cause->id],'class' => "float-right"])!!}
+                                                                    {!!Form::open(['action' => ['CauseController@takeout', $cause->id],'class' => "float-right"])!!}
                                                                     {{Form::hidden('_method', 'DELETE')}}
-                                                                    {{Form::submit('Delete', ['class'=> 'btn btn-sm btn-outline-danger'])}} --}}
+                                                                    {{Form::button('<i class="fa fa-trash"></i>', ['type'=>'submit','class'=> 'btn btn-sm btn-outline-danger',])}}
                                                                     {!!Form::close()!!}
                                                     </td>
                                                 </tr>
@@ -112,13 +121,15 @@
 
                                     </tbody>
                                 </table>
-            </div>
+                </div>
+
                                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
                               </div>
 
-                                  @else
-                                        <p>You have no causes available</p>
-                                @endif
+                              @else
+                              <p>You have no causes available</p>
+                      @endif
+
 
 
 

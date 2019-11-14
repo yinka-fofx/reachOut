@@ -26,13 +26,21 @@ Route::post('/contact','ContactFormController@store');
 
 Route::resource('/causes','CauseController');
 
+Route::delete ('/causesCause/{cause}','CauseController@takeout');
+
+
+
 // Route:get('/', function() {
 
 // })
 
 
 
+    // Route::delete('/causes/{id}/takeout', [
+    // 'uses' => 'CauseController@takeout',
+    //     'as' => 'causes.takeout'
 
+    // ]);
 
 
 Route::post('/causes/{id}/like', [

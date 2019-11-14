@@ -6,12 +6,12 @@
 
 {{-- <a href="/causes/{{$cause->id}}/edit" class="btn btn btn-warning">Edit</a> --}}
 
-<a href="/causes" class="btn btn-sm btn-info ml-3">Go back</a>
+<a href="/causes" class="btn btn-sm btn-info ml-3"><i class="fas fa-arrow-left"></i></a>
 
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">
-                    <div class="card-header text-center">Title:{{$cause->title}}</div>
+                    <div class="card-header text-center my-cause">Title:{{$cause->title}}</div>
 
                 <div class="card-body text-center">
                     <div class="row">
@@ -28,25 +28,25 @@
 
 
                         <div class="col-md-8 col-sm-8">
-                        <div class="card-body text-center">
+                            <div class="card-text" style="font-weight:bold">
 
-                            Description:{!!$cause->description!!}
+                                <strong>Description:</strong>{!!$cause->description!!}
 
-                        </div>
-                        <div class="card-body text-center">
+                            </div>
+                            <div class="card-text text-center" style="font-weight:bold">
 
-                            Location:{{$cause->location}}
+                                Location:{{$cause->location}}
 
-                        </div>
+                            </div>
 
-                        <div class="card-body text-center">
-                                Due Date: {{$cause->Due_Date}}
-                        </div>
+                            <div class="card-text text-center" style="font-weight:bold">
+                                    Due Date: {{$cause->Due_Date}}
+                            </div>
 
 
-                        <div class="card-text text-center">
-                                <small>Written on {{$cause->created_at}} by {{$cause->creator->name}}</small>
-                        </div>
+                            <div class="card-text text-center" style="font-weight:bold">
+                                    <small>Written on {{$cause->created_at}} by {{$cause->creator->name}}</small>
+                            </div>
 
                     </div>
                 </div>
@@ -55,12 +55,12 @@
 
                 @if(!Auth::guest())
                 @if(Auth::user()->id == $cause->user_id)
-            <a href="/causes/{{$cause->id}}/edit" class="btn btn-sm btn-warning mt-5 text-center">Edit</a>
+            <a href="/causes/{{$cause->id}}/edit" class="btn btn-sm btn-info mt-5 text-center">Edit</a>
 
             {!!Form::open(['action' => ['CauseController@destroy', $cause->id], 'method' => 'POST', 'class' => "float-right"])!!}
 
                 {{Form::hidden('_method', 'DELETE')}}
-                {{Form::submit('Delete', ['class'=> 'btn btn-sm btn-danger mt-5'])}}
+                {{Form::button('<i class="fa fa-trash"></i>', ['type' =>'submit','class'=> 'btn btn-sm btn-outline-danger mt-5'])}}
 
     </div>
 </div>

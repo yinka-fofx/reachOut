@@ -257,6 +257,11 @@ class CauseController extends Controller
         $cause->save();
 
         return redirect('/causes')->with('success', 'Cause Updated');
+        // return redirect('/causes/{cause}')->with('success', 'Cause Updated');
+        // return view('causes.show', compact('cause', 'Cause Updated'));
+
+
+
 
     }
 
@@ -299,4 +304,17 @@ class CauseController extends Controller
          $cause->delete();
         return redirect('/causes')->with('success', 'Cause deleted');
     }
+
+
+
+    public function takeout(cause $cause)
+    {
+
+
+         $cause->delete();
+        // return back()->with('success', 'Your cause deleted');
+        return back()->with('message', 'Your followed Cause deleted.');
+    }
+
+
 }
