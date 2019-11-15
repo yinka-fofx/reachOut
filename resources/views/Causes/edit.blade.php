@@ -39,8 +39,14 @@
 
                             <div class="form-group">
                                     {{Form::label('Image', 'Image')}}
-                                    {{Form::file('cause_image')}}
+                                 <input type="file" class="form-control" name="cause_image" style="border:none; ">
+                                </label>
                             </div>
+
+                            {{-- <div class="form-group">
+                                    {{Form::label('Image', 'Image')}}
+                                    {{Form::file('cause_image')}}
+                            </div> --}}
 
                              {{Form::hidden('_method', 'PUT')}}
                              {{-- <div class="form-group">

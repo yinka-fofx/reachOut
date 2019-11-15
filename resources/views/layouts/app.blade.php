@@ -39,42 +39,48 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm sticky-top my-nav">
+            <div class="container-fluid ">
 
-                    <a class="navbar-brand" href="{{ url('/') }}"><span style="font-family: 'Indie Flower', cursive; font-size: larger; font-weight:bolder;" >Reach</span><span class="secondSpan" style="color:green">Out</span></a>
+                    <a class="navbar-brand" href="{{ url('/') }}"><span style="font-family: 'Indie Flower', cursive; font-size: larger; font-weight:bolder;" >Reach</span><span class="secondSpan" style="font-family: 'Indie Flower', cursive; font-size: larger; font-weight:bolder;">Out</span></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    @guest
+                    {{-- @guest
 
-                    @else
+                    @else --}}
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto" style="font-family:'Courier New', Courier, monospace">
 
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item" style="font-family:Georgia, 'Times New Roman', Times, serif">
                                       <a class="nav-link active" href="/causes">Join a cause</a>
                                     </li>
                                     <li class="nav-item">
-                                      <a class="nav-link" href="#">Notifiction</a>
+                                      <a class="nav-link" href="#">Notification</a> --}}
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                       <a class="nav-link" href="#"></a>
-                                    </li>
+                                    </li> --}}
                     </ul>
-                    @endguest
+                    {{-- @endguest --}}
 
 
 
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" style="font-family:Georgia, 'Times New Roman', Times, serif">
+                            @guest
 
+                            @else
+                            <li class="nav-item" style="font-family:Georgia, 'Times New Roman', Times, serif">
+                                    <a class="nav-link active" href="/causes">Join a cause</a>
+                            </li>
+                            @endguest
                             <li class="nav-item">
-                                    <a class="nav-link" href="/causes/create">Create a post</a>
+                                    <a class="nav-link" href="/causes/create">Create a cause</a>
                             </li>
 
                         <!-- Authentication Links -->
@@ -110,6 +116,7 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
+
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -132,6 +139,7 @@
         </nav>
 
         <main class="py-4">
+            {{-- <div class="container"></div> --}}
 
                 @if(session()->has('message'))
                     <div class="alert alert-success" role="alert">
@@ -147,7 +155,7 @@
 
     <!--Footer-->
 
- 
+
 
 
 

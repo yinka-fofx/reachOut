@@ -7,7 +7,7 @@
     background-attachment:fixed;
 
     height: 100vh;
-     margin-top: -120px;
+     margin-top: -80px;
      padding-top:0;
 
     background-size: cover;
@@ -371,4 +371,11 @@ input[type=checkbox]:checked + label {
 .my-uploads {
     background-color: none;
     border:none
+}
+
+.my-nav {
+    /* background-color:#045C6F !important; */
+    border:none !important;
+    /* opacity:#045C6F */
+    height:50px !important;
 }

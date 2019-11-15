@@ -37114,7 +37114,7 @@ var render = function() {
             }
           },
           [
-            _vm._v("UnFollow\n        "),
+            _vm._v("Un Follow\n        "),
             _c("span", [_vm._v(_vm._s(_vm.causeData.user_count))])
           ]
         )

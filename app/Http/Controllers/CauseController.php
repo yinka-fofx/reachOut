@@ -66,7 +66,7 @@ class CauseController extends Controller
 
     public function index()
     {
-        $causes = Cause::orderBy('created_at', 'desc')->get();
+        $causes = Cause::orderBy('updated_at', 'desc')->paginate(5);
         $causes = CauseResource::collection($causes);
         Artisan::call("db:seed --class=Status");
         return view ('causes.index')->with('causes', $causes);
@@ -116,7 +116,7 @@ class CauseController extends Controller
 
                 $extension = $request->file('cause_image')->getClientOriginalExtension();
 
-                //Filename to stor
+                //Filename to store
 
                 $fileNameToStore = $filename. '_'.time().'.'.$extension;
 
@@ -125,7 +125,7 @@ class CauseController extends Controller
                 $path = $request->file('cause_image')->storeAs('public/cause_images', $fileNameToStore);
 
                 } else {
-                    $fileNameToStore = 'noimage.jpg';
+                    $fileNameToStore = 'noimage1.jpg';
                 }
 
             // return back()->with('success', 'new cause added');
@@ -146,11 +146,11 @@ class CauseController extends Controller
             $cause->cause_image = $fileNameToStore;
             $cause->save();
 
-            // $users = User::all();
+            $users = User::all();
 
-            // foreach($users as $user) {
-            //     $user->notify(new NewPost($cause));
-            // }
+            foreach($users as $user) {
+                $user->notify(new NewPost($cause));
+            }
 
             return redirect('/causes')->with('success', 'Cause Created');
 

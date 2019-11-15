@@ -35,19 +35,19 @@
 
                             <div class="col-md-8 col-sm-8">
 
-                                    <h3><a href="/causes/{{$cause->id}}">{{$cause->title}}</a></h3>
-                                    <div class="card-text">
+                                    <h3><a href="/causes/{{$cause->id}}" style="font-weight:bold; color:grey">{{$cause->title}}</a> </h3>
+                                    <div class="card-text" style="font-weight:bold">
                                             Location: {{$cause->location}}
                                      </div>
-                                     <div class="card-text">
+                                     <div class="card-text "style="font-weight:bold">
                                             Due Date: {{$cause->Due_Date}}
                                      </div>
-                                     <div class="card-text">
-                                            Status: {{$cause->Active == 1 ? "Active" : "Completed"}}
+                                     <div class="card-text" style="font-weight:bold">
+                                            Status: {{$cause->Active == 1 ? "Completed" : "Active"}}
                                      </div>
 
-                                     <div class="card-text">
-                                            <small>Written on {{$cause->created_at}} by {{$cause->creator->name}}</small>
+                                     <div class="card-text" style="font-weight:bold">
+                                            <small>Posted {{$cause->created_at->diffForHumans()}} by {{$cause->creator->name}}</small>
                                     </div>
 
                                     <div class="row mt-3">
@@ -59,6 +59,8 @@
                                             <follow-component :cause="{{ json_encode($cause) }}"></follow-component>
 
                                         </div>
+
+
                                     </div>
 
 
@@ -78,9 +80,13 @@
 
     </div>
     @endforeach
+
+        <div class="container d-flex justify-content-center mt-5" style="color:black">
+            {{$causes->links()}}
+        </div>
     @else
         <div class="card">
-            <div class="card-text">
+            <div class="container card-text">
             <p>No Post found</p>
             </div>
         </div>

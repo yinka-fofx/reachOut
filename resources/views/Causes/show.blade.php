@@ -55,7 +55,7 @@
 
                 @if(!Auth::guest())
                 @if(Auth::user()->id == $cause->user_id)
-            <a href="/causes/{{$cause->id}}/edit" class="btn btn-sm btn-info mt-5 text-center">Edit</a>
+            <a href="/causes/{{$cause->id}}/edit" class="btn btn-sm btn-info mt-5 text-center"><i class="fas fa-edit"></i></a>
 
             {!!Form::open(['action' => ['CauseController@destroy', $cause->id], 'method' => 'POST', 'class' => "float-right"])!!}
 

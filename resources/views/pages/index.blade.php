@@ -57,10 +57,10 @@
                     @foreach($causes as $cause)
                         <div class="col-sm-12 col-md-4 col-lg-4 mt-4">
                             <div class="card">
-                                <img class="card-img-top" style="width:100%" src="/storage/cause_images/{{$cause->cause_image}}">
+                                <img class="img" src="/storage/cause_images/{{$cause->cause_image}}" width="350" height="150">
 
                                 <div class="card-block">
-                                <h3>Title:<a style="color:black" href="/causes">{{$cause->title}}</a></h3>
+                                <h3>Title:<a style="color:black; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" href="/causes">{{$cause->title}}</a></h3>
                                 {{-- <h4 class="card-title">Posted by:{{$cause->title}}</h4> --}}
                                     <div class="meta"></div>
                                     <hr>
@@ -77,7 +77,7 @@
                                     </div>
 
                                     <div class="card-text pb-2" style="border-bottom: solid 1px rgba(102, 100, 100, 0.521);">
-                                            Status: {{$cause->Active == 1 ? "Completed" : "Active"}}
+                                            Status:{{$cause->Active == 1 ? "Completed" : "Active"}}
                                     </div>
 
                                     <div class="card-text pb-2" style="border-bottom: solid 1px rgba(102, 100, 100, 0.521);">
