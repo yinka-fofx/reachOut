@@ -53,6 +53,8 @@
                                     {{Form::label('Image', 'Image')}}
                                  <input type="file" class="form-control" name="cause_image" style="border:none; ">
                                 </label>
+                                <div class="text-danger">{{$errors->first('Image')}}</div>
+
                              </div>
 
 

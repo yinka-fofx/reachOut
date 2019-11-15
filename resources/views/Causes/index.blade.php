@@ -25,7 +25,12 @@
     <div class="row justify-content-center">
             <div class="col-md-8">
                     <div class="card mt-4">
-                        <div class="card-header text-center my-cause">Causes</div>
+                        {{-- <div> <h3><a href="/causes/{{$cause->id}}" style="font-weight:bold; color:grey">{{$cause->title}}</a></h3></div> --}}
+
+                        <div class="card-header text-center my-cause"><a href="/causes/{{$cause->id}}" style="font-weight:; color:grey">{{$cause->title}}</a></div>
+
+
+                        {{-- <div class="card-header text-center my-cause">Title:{{$cause->title}}</div> --}}
 
                     <div class="card-body text-center">
                         <div class="row">
@@ -34,8 +39,11 @@
                             </div>
 
                             <div class="col-md-8 col-sm-8">
+                                    <div class="card-text" style="font-weight:bold">
+                                            Description: {{$cause->description}}
+                                     </div>
 
-                                    <h3><a href="/causes/{{$cause->id}}" style="font-weight:bold; color:grey">{{$cause->title}}</a> </h3>
+                                    {{-- <h3><a href="/causes/{{$cause->id}}" style="font-weight:bold; color:grey">{{$cause->title}}</a> </h3> --}}
                                     <div class="card-text" style="font-weight:bold">
                                             Location: {{$cause->location}}
                                      </div>
@@ -61,7 +69,11 @@
                                         </div>
 
 
-                                    </div>
+                                        </div>
+
+                                        <div class="card-footer" style="font-weight:bold">
+                                                <small>click on follow to particpate in the cause</small>
+                                        </div>
 
 
 
